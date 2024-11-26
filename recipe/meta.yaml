@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.2.1" %}
 
 package:
   name: wrenfold
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/wrenfold/wrenfold/releases/download/v{{ version }}/wrenfold-source-v{{ version }}.tar.gz
-  sha256: 23c6a537136bd4d92a58ad55aca82285d11b1d2b8965e3e815ad421efc023358
+  sha256: 6615bd669b72569c4f37d3298905a9f34079f03211521d480188250184a7cda0
 
 build:
   number: 0
@@ -18,7 +18,7 @@ requirements:
     - {{ stdlib("c") }}
   host:
     - python
-    - scikit-build-core ==0.9.8
+    - scikit-build-core ==0.10.7
     - cmake >=3.20
     - ninja >=1.5
     - mypy ==1.9.0
@@ -34,6 +34,8 @@ test:
     - pip
     - numpy
     - sympy
+    - jax
+    - pytorch
   source_files:
     - components/wrapper/tests/*.py
     - examples/**/*.py
